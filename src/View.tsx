@@ -1,4 +1,4 @@
-import React, { useState, ReactChildren, useMemo, ReactNode } from "react";
+import React, { useState, useMemo, ReactNode } from "react";
 import bridge from "@vkontakte/vk-bridge";
 import { View } from "@vkontakte/vkui";
 import { ViewContext } from "./context";
@@ -14,8 +14,6 @@ interface ViewProps {
    * Home `Panel`
    */
   homePanel: string;
-
-  children: ReactChildren;
 }
 
 const NavigatorView: React.FC<ViewProps> = ({ id, homePanel, children }) => {
@@ -48,7 +46,7 @@ const NavigatorView: React.FC<ViewProps> = ({ id, homePanel, children }) => {
   // Go to the previous panel
   const goBack = () => {
     // Update history
-    setHistory((hist) => hist.slice(0, hist.length - 2));
+    setHistory((hist) => hist.slice(0, hist.length - 1));
 
     // If on home panel, disable swipe back
     if (history[history.length - 2].id === homePanel) {

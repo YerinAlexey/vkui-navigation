@@ -1,4 +1,4 @@
-import React, { ReactChildren, useState } from "react";
+import React, { useState } from "react";
 import bridge from "@vkontakte/vk-bridge";
 import { Root } from "@vkontakte/vkui";
 import { RootContext } from "./context";
@@ -13,8 +13,6 @@ interface RootProps {
    * `onTransition` passed to `Root`
    */
   onTransition?(params: { isBack: boolean; from: string; to: string }): void;
-
-  children: ReactChildren;
 }
 
 /**
