@@ -8,6 +8,7 @@ export const RootContext = createContext<RootState>({
 
 export const ViewContext = createContext<ViewState>({
   go: () => {},
+  goBack: () => {},
   params: {},
 
   showPopout: () => {},

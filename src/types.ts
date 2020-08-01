@@ -38,6 +38,12 @@ export interface ViewState {
    * @param params Custom params to pass
    */
   go(panelId: string, params: any): void;
+
+  /**
+   * Go to previous `Panel`
+   */
+  goBack(): void;
+
   /**
    * Params passed via `params` in `go`
    */
