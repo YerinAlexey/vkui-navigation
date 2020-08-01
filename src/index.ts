@@ -1,1 +1,1 @@
-export default "empty";
+export { Navigator } from "./context";
