@@ -15,9 +15,20 @@
   ],
   "author": "Alexey Yerin",
   "license": "MIT",
+  "scripts": {
+    "prepack": "rollup -c",
+    "build": "rollup -c",
+    "watch": "rollup -cw"
+  },
   "peerDependencies": {
-    "react": ">16.8",
+    "@vkontakte/vk-bridge": "*",
     "@vkontakte/vkui": "*",
-    "@vkontakte/vk-bridge": "*"
+    "react": ">16.8"
+  },
+  "devDependencies": {
+    "rollup": "^2.23.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.7"
   }
 }
