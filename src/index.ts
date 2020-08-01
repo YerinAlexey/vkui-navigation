@@ -1,1 +1,1 @@
-export { Navigator } from "./context";
+export { Navigator } from "./types";

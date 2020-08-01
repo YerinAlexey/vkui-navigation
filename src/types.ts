@@ -1,4 +1,4 @@
-import { ReactNode, createContext } from "react";
+import { ReactNode } from "react";
 
 // Navigation between Views
 export interface RootState {
@@ -15,11 +15,6 @@ export interface RootState {
    */
   viewParams: any;
 }
-
-export const RootContext = createContext<RootState>({
-  goView: () => {},
-  viewParams: {},
-});
 
 // Navigation between Panels
 export interface ViewState {
@@ -46,14 +41,6 @@ export interface ViewState {
    */
   hidePopout(): void;
 }
-
-export const ViewContext = createContext<ViewState>({
-  go: () => {},
-  params: {},
-
-  showPopout: () => {},
-  hidePopout: () => {},
-});
 
 /**
  * Global object used for navigation
