@@ -18,7 +18,7 @@ interface ViewProps {
   children: ReactChildren;
 }
 
-function NavigatorView({ id, homePanel, children }: ViewProps) {
+const NavigatorView: React.FC<ViewProps> = ({ id, homePanel, children }) => {
   const [history, setHistory] = useState<HistoryEntry[]>([
     {
       id: homePanel,
@@ -86,6 +86,6 @@ function NavigatorView({ id, homePanel, children }: ViewProps) {
       </View>
     </ViewContext.Provider>
   );
-}
+};
 
 export { NavigatorView };

@@ -20,7 +20,11 @@ interface RootProps {
 /**
  * Wrapper around `Root`
  */
-function NavigatorRoot({ homeView, children, ...rest }: RootProps) {
+const NavigatorRoot: React.FC<RootProps> = ({
+  homeView,
+  children,
+  ...rest
+}) => {
   const [activeView, setActiveView] = useState(homeView);
   const [viewParams, setViewParams] = useState({});
 
@@ -45,6 +49,6 @@ function NavigatorRoot({ homeView, children, ...rest }: RootProps) {
       </Root>
     </RootContext.Provider>
   );
-}
+};
 
 export { NavigatorRoot };
