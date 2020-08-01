@@ -30,5 +30,10 @@
     "rollup-plugin-typescript2": "^0.27.1",
     "tslib": "^2.0.0",
     "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.44",
+    "@vkontakte/vk-bridge": "^2.2.5",
+    "@vkontakte/vkui": "^3.12.0"
   }
 }
