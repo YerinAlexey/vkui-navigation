@@ -26,12 +26,13 @@
     "react": ">16.8"
   },
   "devDependencies": {
-    "rollup": "^2.23.0",
-    "rollup-plugin-typescript2": "^0.27.1",
-    "tslib": "^2.0.0",
-    "typescript": "^3.9.7",
     "@types/react": "^16.9.44",
     "@vkontakte/vk-bridge": "^2.2.5",
-    "@vkontakte/vkui": "^3.12.0"
+    "@vkontakte/vkui": "^3.12.0",
+    "rollup": "^2.23.0",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.7"
   }
 }
