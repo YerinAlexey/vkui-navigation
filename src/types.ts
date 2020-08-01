@@ -18,13 +18,13 @@ export interface RootState {
   /**
    * Go to another `View`
    *
-   * @param viewId `id` of target `View`
+   * @param viewId `View`'s ID
    * @param params Custom params to pass
    */
   changeView(viewId: string, params: any): void;
 
   /**
-   * Params passed via `params` in `goPage`
+   * Params passed via `params` in `changeView`
    */
   viewParams: any;
 }
@@ -34,7 +34,7 @@ export interface ViewState {
   /**
    * Go to another `Panel`
    *
-   * @param panelId `id` of target `Panel`
+   * @param panelId `Panel`'s ID
    * @param params Custom params to pass
    */
   go(panelId: string, params: any): void;

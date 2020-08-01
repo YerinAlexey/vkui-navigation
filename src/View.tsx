@@ -11,7 +11,7 @@ interface ViewProps {
   id: string;
 
   /**
-   * Home panel
+   * Home `Panel`
    */
   homePanel: string;
 

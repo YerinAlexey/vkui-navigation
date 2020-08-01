@@ -5,7 +5,7 @@ import { RootContext } from "./context";
 
 interface RootProps {
   /**
-   * Home `View`'s `id`
+   * Home `View`
    */
   homeView: string;
 
