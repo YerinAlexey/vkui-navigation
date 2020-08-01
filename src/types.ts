@@ -21,7 +21,7 @@ export interface RootState {
    * @param viewId `id` of target `View`
    * @param params Custom params to pass
    */
-  goView(viewId: string, params: any): void;
+  changeView(viewId: string, params: any): void;
 
   /**
    * Params passed via `params` in `goPage`
