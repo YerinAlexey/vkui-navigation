@@ -1,0 +1,23 @@
+{
+  "name": "vkui-navigation",
+  "version": "0.1.0",
+  "description": "Modern router for VK Mini Apps",
+  "keywords": [
+    "vk-mini-apps",
+    "vkui",
+    "vk-bridge",
+    "navigation"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist"
+  ],
+  "author": "Alexey Yerin",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">16.8",
+    "@vkontakte/vkui": "*",
+    "@vkontakte/vk-bridge": "*"
+  }
+}
