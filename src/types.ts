@@ -1,5 +1,18 @@
 import { ReactNode } from "react";
 
+// History entry for View
+export interface HistoryEntry {
+  /**
+   * `Panel`'s `id`
+   */
+  id: string;
+
+  /**
+   * Params
+   */
+  params: any;
+}
+
 // Navigation between Views
 export interface RootState {
   /**
@@ -25,7 +38,6 @@ export interface ViewState {
    * @param params Custom params to pass
    */
   go(panelId: string, params: any): void;
-
   /**
    * Params passed via `params` in `go`
    */
