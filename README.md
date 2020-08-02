@@ -119,7 +119,7 @@ function App() {
 // snip
 ```
 
-And after that you can navigate between `View`s using `navigator.changeView` with `View`'s ID and optional params (available via `navigator.viewParams` from newly created `View`):
+And after that you can navigate between them using `navigator.changeView` with `View`'s ID and optional params (available via `navigator.viewParams` from newly created `View`):
 ```js
 function OnboardingView({ id }) {
   // snip
