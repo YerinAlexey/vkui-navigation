@@ -21,7 +21,7 @@ export interface RootState {
    * @param viewId `View`'s ID
    * @param params Custom params to pass
    */
-  changeView(viewId: string, params: any): void;
+  changeView(viewId: string, params?: any): void;
 
   /**
    * Params passed via `params` in `changeView`
@@ -37,7 +37,7 @@ export interface ViewState {
    * @param panelId `Panel`'s ID
    * @param params Custom params to pass
    */
-  go(panelId: string, params: any): void;
+  go(panelId: string, params?: any): void;
 
   /**
    * Go to previous `Panel`

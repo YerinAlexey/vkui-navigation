@@ -29,10 +29,10 @@ const NavigatorView: React.FC<ViewProps> = ({ id, homePanel, children }) => {
   const lastPanel = useMemo(() => history[history.length - 1], [history]);
 
   // Go to another panel
-  const go = (id: string, params: any) => {
+  const go = (id: string, params?: any) => {
     const entry = {
       id,
-      params,
+      params: params || {},
     };
 
     // Push
