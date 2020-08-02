@@ -1,4 +1,4 @@
-import React, { useState, useMemo, ReactNode } from "react";
+import React, { useState, useMemo, ReactNode, useEffect } from "react";
 import bridge from "@vkontakte/vk-bridge";
 import { View } from "@vkontakte/vkui";
 import { ViewContext } from "./context";
@@ -30,26 +30,30 @@ const NavigatorView: React.FC<ViewProps> = ({ id, homePanel, children }) => {
 
   // Go to another panel
   const go = (id: string, params: any) => {
+    const entry = {
+      id,
+      params,
+    };
+
     // Push
-    setHistory((hist) => [
-      ...hist,
-      {
-        id,
-        params,
-      },
-    ]);
+    setHistory((hist) => [...hist, entry]);
 
     // Enable Swipe Back
     bridge.send("VKWebAppEnableSwipeBack");
+
+    // Add panel to browser history
+    window.history.pushState(entry, "");
   };
 
   // Go to the previous panel
-  const goBack = () => {
+  const popHistory = () => {
     // Update history
-    setHistory((hist) => hist.slice(0, hist.length - 1));
+    setHistory((hist) =>
+      hist.length > 1 ? hist.slice(0, hist.length - 1) : hist
+    );
 
     // If on home panel, disable swipe back
-    if (history[history.length - 2].id === homePanel) {
+    if (history[history.length - 1].id === homePanel) {
       bridge.send("VKWebAppDisableSwipeBack");
     }
   };
@@ -63,14 +67,26 @@ const NavigatorView: React.FC<ViewProps> = ({ id, homePanel, children }) => {
     showPopout(null);
   };
 
+  // History navigation (Android back button)
+  useEffect(() => {
+    window.history.replaceState({ id: homePanel, params: {} }, "");
+    window.addEventListener("popstate", popHistory);
+
+    // Clean up
+    return () => {
+      // Remove event handler
+      window.removeEventListener("popstate", popHistory);
+    };
+  }, []);
+
   return (
     <ViewContext.Provider
       value={{
         go,
-        goBack,
-        params: lastPanel.params,
         showPopout,
         hidePopout,
+        goBack: window.history.back.bind(window.history),
+        params: lastPanel.params,
       }}
     >
       <View
@@ -78,7 +94,7 @@ const NavigatorView: React.FC<ViewProps> = ({ id, homePanel, children }) => {
         activePanel={lastPanel.id}
         history={history.map((entry) => entry.id)}
         popout={popout}
-        onSwipeBack={goBack}
+        onSwipeBack={popHistory}
       >
         {children}
       </View>
