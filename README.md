@@ -36,7 +36,7 @@ function App() {
 // Rest of your code ...
 ```
 ## Navigating between Panels
-It's easy, just use `navigator.go` with your panel's ID and optional params (passed to `navigator.params`):
+It's easy, just use `navigator.go` with your panel's ID and optional params (can be accessed via `navigator.params`):
 ```js
 function MyComponent() {
   const navigator = useNavigator();
