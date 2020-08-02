@@ -5,7 +5,93 @@ Modern router for VK Mini Apps.
 
 This library simplifies navigation with VKUI and provides API to control it. Application structure is kept the same ([`Root`] -> `View` -> `Panel`) and even components are named as in VKUI so it will be much easier to get started if you already know how VKUI works.
 
-# Example
+# Quick start
+## Structure
+This is how basic structure of the application looks like:
+```js
+import React from "react";
+import { View, useNavigator, withNavigator } from "vkui-navigation";
+
+// Function component example
+function MyComponent() {
+  const navigator = useNavigator();
+
+  // Now you can navigate between Views and Panels using that navigator
+}
+
+// Class-based component example
+class MyClassComponent extends React.Component {
+  /* ... */
+}
+
+// Wrap class component
+const WrappedClassComponent = withNavigator(MyClassComponent);
+
+// Now you can access navigator from this.props.navigator
+
+function App() {
+  return <View homePanel="home">{/* Panels go here */}</View>;
+}
+
+// Rest of your code ...
+```
+## Navigating between Panels
+It's easy, just use `navigator.go` with your panel's ID and params (passed to `navigator.params`):
+```js
+function MyComponent() {
+  const navigator = useNavigator();
+
+  // snip
+
+  function goSomewhere() {
+    navigator.go("other-panel", { hello: "world" });
+  }
+
+  // snip
+}
+```
+
+To go to the previous panel, you can use `navigator.goBack`:
+```js
+function MyComponent() {
+  const navigator = useNavigator();
+
+  // snip
+
+  return (
+    <Panel id="whatever">
+      <PanelHeader left={<PanelHeaderBack onClick={navigator.goBack} />}>
+        Header
+      </PanelHeader>
+
+      {/* snip */}
+    </Panel>
+  );
+}
+```
+
+You can also set popouts with `navigator.showPopout`/`navigator.hidePopout`:
+```js
+function MyComponent() {
+  const navigator = useNavigator();
+
+  // snip
+
+  function loadData() {
+    // Show spinner
+    navigator.showPopout(<ScreenSpinner />);
+
+    // Fetch data ...
+
+    // Hide spinner
+    navigator.hidePopout();
+  }
+
+  // snip
+}
+```
+
+# Full example
 ```js
 import React from "react";
 import ReactDOM from "react-dom";
