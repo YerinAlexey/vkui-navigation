@@ -1,9 +1,9 @@
-import React, { useContext, useMemo, ReactNode } from "react";
+import React, { useContext, useMemo } from "react";
 import { RootContext, ViewContext } from "./context";
 import { Navigator } from "./types";
 
 /**
- * Hook to inject `Navigator` object
+ * Hook to access `Navigator` object from a functional component
  */
 export function useNavigator(): Navigator {
   const rootState = useContext(RootContext);
@@ -21,7 +21,7 @@ export function useNavigator(): Navigator {
 }
 
 /**
- * HOC to inject `Navigator` to props
+ * HOC to access `Navigator` object from props
  */
 export function withNavigator<T>(Component: T): T {
   function WithNavigator(props: {}) {
