@@ -93,7 +93,7 @@ function MyComponent() {
 ```
 
 ## Navigation between Views
-VKUI supports second type of navigation - between `View`s. To achieve this, you need to wrap your `View`s in `Root` component:
+VKUI supports second type of navigation - between `View`s. First of, you need to wrap your `View`s in `Root` component:
 ```js
 import React from "react";
 import { Root, View /* ... */ } from "vkui-navigation";
@@ -119,7 +119,7 @@ function App() {
 // snip
 ```
 
-To navigate between `View`s you can use `navigator.changeView` with `View`'s ID and optional params (available via `navigator.viewParams` from newly created `View`):
+And after that you can navigate between `View`s using `navigator.changeView` with `View`'s ID and optional params (available via `navigator.viewParams` from newly created `View`):
 ```js
 function OnboardingView({ id }) {
   // snip
