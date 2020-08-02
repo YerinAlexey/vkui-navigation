@@ -35,8 +35,9 @@ function App() {
 
 // Rest of your code ...
 ```
+
 ## Navigating between Panels
-It's easy, just use `navigator.go` with your panel's ID and optional params (can be accessed via `navigator.params`):
+It's easy, just use `navigator.go` with your `Panel`'s ID and optional params (available via `navigator.params` from newly created `Panel`):
 ```js
 function MyComponent() {
   const navigator = useNavigator();
@@ -51,7 +52,7 @@ function MyComponent() {
 }
 ```
 
-To go to the previous panel, you can use `navigator.goBack`:
+To go to the previous `Panel`, you can use `navigator.goBack`:
 ```js
 function MyComponent() {
   const navigator = useNavigator();
@@ -70,7 +71,7 @@ function MyComponent() {
 }
 ```
 
-You can also set popouts with `navigator.showPopout`/`navigator.hidePopout`:
+You can also set `Popout`s with `navigator.showPopout`/`navigator.hidePopout`:
 ```js
 function MyComponent() {
   const navigator = useNavigator();
@@ -95,7 +96,7 @@ function MyComponent() {
 VKUI supports second type of navigation - between `View`s. To achieve this, you need to wrap your `View`s in `Root` component:
 ```js
 import React from "react";
-import { Root } from "vkui-navigation";
+import { Root, View /* ... */ } from "vkui-navigation";
 
 function OnboardingView({ id }) {
   // snip
@@ -118,7 +119,7 @@ function App() {
 // snip
 ```
 
-To navigate between `View`s you can use `navigator.changeView` with `View`'s ID and optional params (can be accessed via `navigator.viewParams`):
+To navigate between `View`s you can use `navigator.changeView` with `View`'s ID and optional params (available via `navigator.viewParams` from newly created `View`):
 ```js
 function OnboardingView({ id }) {
   // snip
@@ -131,7 +132,7 @@ function OnboardingView({ id }) {
 }
 ```
 
-**Note:** `Root` does not have a history so you can't navigate to previous `View` directly. This is why method is called `changeView`.
+**Note:** `Root` does not have a history of `View`s so you can't navigate to previous `View` directly. This is why method is called `changeView`.
 
 # Full example
 ```js
