@@ -13,6 +13,7 @@
   "files": [
     "./dist"
   ],
+  "repository": "https://github.com/YerinAlexey/vkui-navigation",
   "author": "Alexey Yerin",
   "license": "MIT",
   "scripts": {
