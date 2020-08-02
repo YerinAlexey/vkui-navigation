@@ -57,6 +57,7 @@ class NextComponent extends React.Component {
   }
 }
 
+// Wrap component in withNavigator HOC to get access to navigator
 const Next = withNavigator(NextComponent);
 
 function App() {
