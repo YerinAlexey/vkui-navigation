@@ -22,7 +22,7 @@ interface NavigatorTabbarItem
   icon: ReactNode;
 
   /**
-   * Story this item belongs to
+   * Story that this item belongs to
    */
   story: string;
 }
@@ -56,7 +56,10 @@ const buildTabbar = (
   );
 };
 
-export const NavigatorEpic: React.FC<EpicProps> = ({
+/**
+ * Wrapper around `Epic`
+ */
+const NavigatorEpic: React.FC<EpicProps> = ({
   homeStory,
   tabbar,
   children,
@@ -75,3 +78,5 @@ export const NavigatorEpic: React.FC<EpicProps> = ({
     </Epic>
   );
 };
+
+export { NavigatorEpic };

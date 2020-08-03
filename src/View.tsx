@@ -16,6 +16,9 @@ interface ViewProps {
   homePanel: string;
 }
 
+/**
+ * Wrapper around `View`
+ */
 const NavigatorView: React.FC<ViewProps> = ({ id, homePanel, children }) => {
   const [history, setHistory] = useState<HistoryEntry[]>([
     {
