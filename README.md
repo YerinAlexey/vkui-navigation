@@ -146,6 +146,58 @@ function OnboardingView({ id }) {
 
 **Note:** `Root` does not have a history of `View`s so you can't navigate to previous `View` directly. This is why method is called `changeView`.
 
+## Bottom navigation
+To create bottom navigation bar you can wrap your `View`s or `Root`s in `Epic` and define your tab bar:
+```js
+import React from "react";
+import { View } from "@vkontakte/vkui";
+import { View, Epic /* ... */ } from "vkui-navigation";
+import Icon28Newsfeed from "@vkontakte/icons/dist/28/newsfeed";
+import Icon28ServicesOutline from "@vkontakte/icons/dist/28/services_outline";
+
+function Feed({ id }) {
+  // snip
+
+  return <View id={id}>{/* snip */}</View>;
+}
+
+function App() {
+  // Define bottom tab bar
+  const tabbar = [
+    {
+      text: "Feed",
+      icon: <Icon28Newsfeed />,
+      story: "feed", // Story ID for this tab
+    },
+    {
+      text: "Services",
+      icon: <Icon28ServicesOutline />,
+      story: "services", // Story ID for this tab
+    },
+    // Other tabs ...
+  ];
+
+  return (
+    <Epic tabbar={tabbar} homeStory="feed">
+      <Feed id="feed" />
+      <Services id="services" />
+      <Messages id="messages" />
+      <Clips id="clips" />
+      <Profile id="profile" />
+    </Epic>
+  );
+}
+```
+_Note:_ `story` in `tabbar` should match corresponding `View`'s (or `Root`'s) ID
+
+Defining a tab bar can be confusing because in VKUI you need to use `Tabbar`
+and `TabbarItem` components to build it. With `vkui-navigation` you can write
+your tabs as an array of objects. It accepts all properties from `TabbarItem`
+except `selected` and `onClick` (they're handled by navigator). Also, two
+properties were added:
+ - `story: string` - `View`'s or `Root`'s ID that belongs to this tab
+ - `icon: ReactNode` - Icon that will be normally passed as `TabbarItem`'s child node
+
 # Full example
 ```js
 import React from "react";
