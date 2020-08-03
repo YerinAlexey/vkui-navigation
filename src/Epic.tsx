@@ -1,8 +1,6 @@
 import React, { useState, ReactNode, useMemo } from "react";
-import { Epic, Tabbar } from "@vkontakte/vkui";
-import TabbarItem, {
-  TabbarItemProps,
-} from "@vkontakte/vkui/dist/components/TabbarItem/TabbarItem";
+import { Epic, Tabbar, TabbarItem } from "@vkontakte/vkui";
+import { TabbarItemProps } from "@vkontakte/vkui/dist/components/TabbarItem/TabbarItem";
 
 interface EpicProps {
   /**
