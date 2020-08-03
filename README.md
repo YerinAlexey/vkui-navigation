@@ -192,7 +192,7 @@ class NextComponent extends React.Component {
           Empty page
         </PanelHeader>
 
-        <Div>There's nothing to see here</Div>
+        <Div>There is nothing to see here</Div>
       </Panel>
     );
   }
