@@ -155,11 +155,15 @@ import { View, Epic /* ... */ } from "vkui-navigation";
 import Icon28Newsfeed from "@vkontakte/icons/dist/28/newsfeed";
 import Icon28ServicesOutline from "@vkontakte/icons/dist/28/services_outline";
 
+// snip
+
 function Feed({ id }) {
   // snip
 
   return <View id={id}>{/* snip */}</View>;
 }
+
+// snip
 
 function App() {
   // Define bottom tab bar
@@ -167,12 +171,12 @@ function App() {
     {
       text: "Feed",
       icon: <Icon28Newsfeed />,
-      story: "feed", // Story ID for this tab
+      story: "feed", // View's ID for this tab
     },
     {
       text: "Services",
       icon: <Icon28ServicesOutline />,
-      story: "services", // Story ID for this tab
+      story: "services", // View's ID for this tab
     },
     // Other tabs ...
   ];
