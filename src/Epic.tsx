@@ -11,7 +11,7 @@ interface EpicProps {
   homeStory: string;
 
   /**
-   * Bar defenition
+   * `Tabbar` defenition
    */
   tabbar: NavigatorTabbar;
 }
