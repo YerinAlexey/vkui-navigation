@@ -49,7 +49,7 @@ function App() {
 ```
 
 ## Navigating between Panels
-It's easy, just use `navigator.go` with your `Panel`'s ID and optional params (available via `navigator.params` from newly created `Panel`):
+It's easy, just use `navigator.go` with your `Panel`'s ID and optional params (will be available via `navigator.params` from newly created `Panel`):
 ```js
 function MyComponent() {
   const navigator = useNavigator();
@@ -131,7 +131,7 @@ function App() {
 // snip
 ```
 
-And after that you can navigate between them using `navigator.changeView` with `View`'s ID and optional params (available via `navigator.viewParams` from newly created `View`):
+And after that you can navigate between them using `navigator.changeView` with `View`'s ID and optional params (will be available via `navigator.viewParams` from newly created `View`):
 ```js
 function OnboardingView({ id }) {
   // snip
