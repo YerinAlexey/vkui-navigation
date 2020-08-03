@@ -42,8 +42,9 @@ const buildTabbar = (
 ) => {
   return (
     <Tabbar>
-      {tabbar.map(({ icon, story, ...rest }) => (
+      {tabbar.map(({ icon, story, ...rest }, index) => (
         <TabbarItem
+          key={index}
           selected={selectedStory === story}
           onClick={() => {
             onChange(story);
