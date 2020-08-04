@@ -3,13 +3,12 @@ import bridge from "@vkontakte/vk-bridge";
 import { View } from "@vkontakte/vkui";
 import { ViewContext } from "./context";
 import { HistoryEntry } from "./types";
+import { ViewProps } from "@vkontakte/vkui/dist/components/View/View";
 
-interface ViewProps {
-  /**
-   * `View`'s ID
-   */
-  id: string;
+// These properties are handled by vkui-navigation
+type HandledProps = "activePanel" | "history" | "popout" | "onSwipeBack";
 
+interface NavigatorViewProps extends Exclude<ViewProps, HandledProps> {
   /**
    * Home `Panel`
    */
@@ -19,7 +18,11 @@ interface ViewProps {
 /**
  * Wrapper around `View`
  */
-const NavigatorView: React.FC<ViewProps> = ({ id, homePanel, children }) => {
+const NavigatorView: React.FC<NavigatorViewProps> = ({
+  homePanel,
+  children,
+  ...rest
+}) => {
   const [history, setHistory] = useState<HistoryEntry[]>([
     {
       id: homePanel,
@@ -93,11 +96,11 @@ const NavigatorView: React.FC<ViewProps> = ({ id, homePanel, children }) => {
       }}
     >
       <View
-        id={id}
         activePanel={lastPanel.id}
         history={history.map((entry) => entry.id)}
         popout={popout}
         onSwipeBack={popHistory}
+        {...rest}
       >
         {children}
       </View>

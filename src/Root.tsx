@@ -2,23 +2,21 @@ import React, { useState } from "react";
 import bridge from "@vkontakte/vk-bridge";
 import { Root } from "@vkontakte/vkui";
 import { RootContext } from "./context";
+import { RootProps } from "@vkontakte/vkui/dist/components/Root/Root";
 
-interface RootProps {
+type HandledProps = "activeView";
+
+interface NavigatorRootProps extends Exclude<RootProps, HandledProps> {
   /**
    * Home `View`
    */
   homeView: string;
-
-  /**
-   * `onTransition` passed to `Root`
-   */
-  onTransition?(params: { isBack: boolean; from: string; to: string }): void;
 }
 
 /**
  * Wrapper around `Root`
  */
-const NavigatorRoot: React.FC<RootProps> = ({
+const NavigatorRoot: React.FC<NavigatorRootProps> = ({
   homeView,
   children,
   ...rest
