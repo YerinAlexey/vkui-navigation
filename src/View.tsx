@@ -8,7 +8,7 @@ import { ViewProps } from "@vkontakte/vkui/dist/components/View/View";
 // These properties are handled by vkui-navigation
 type HandledProps = "activePanel" | "history" | "popout" | "onSwipeBack";
 
-interface NavigatorViewProps extends Exclude<ViewProps, HandledProps> {
+interface NavigatorViewProps extends Omit<ViewProps, HandledProps> {
   /**
    * Home `Panel`
    */

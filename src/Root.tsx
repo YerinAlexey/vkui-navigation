@@ -6,7 +6,7 @@ import { RootProps } from "@vkontakte/vkui/dist/components/Root/Root";
 
 type HandledProps = "activeView";
 
-interface NavigatorRootProps extends Exclude<RootProps, HandledProps> {
+interface NavigatorRootProps extends Omit<RootProps, HandledProps> {
   /**
    * Home `View`
    */
