@@ -15,7 +15,7 @@ interface EpicProps {
 }
 
 interface NavigatorTabbarItem
-  extends Exclude<TabbarItemProps, "selected" | "onClick"> {
+  extends Omit<TabbarItemProps, "selected" | "onClick"> {
   /**
    * Icon to place alongside the text
    */
