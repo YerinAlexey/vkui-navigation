@@ -14,6 +14,9 @@ interface EpicProps {
   tabbar: NavigatorTabbar;
 }
 
+/**
+ * Defenition of the tab in `Tabbar`
+ */
 interface NavigatorTabbarItem
   extends Omit<TabbarItemProps, "selected" | "onClick"> {
   /**
@@ -26,6 +29,10 @@ interface NavigatorTabbarItem
    */
   story: string;
 }
+
+/**
+ * Defenition of the `Tabbar`
+ */
 type NavigatorTabbar = NavigatorTabbarItem[];
 
 type TabbarOnChange = (story: string) => void;

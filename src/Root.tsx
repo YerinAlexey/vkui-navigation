@@ -4,6 +4,7 @@ import { Root } from "@vkontakte/vkui";
 import { RootContext } from "./context";
 import { RootProps } from "@vkontakte/vkui/dist/components/Root/Root";
 
+// Props handled by vkui-navigation
 type HandledProps = "activeView";
 
 interface NavigatorRootProps extends Omit<RootProps, HandledProps> {

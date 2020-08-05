@@ -5,7 +5,7 @@ import { ViewContext } from "./context";
 import { HistoryEntry } from "./types";
 import { ViewProps } from "@vkontakte/vkui/dist/components/View/View";
 
-// These properties are handled by vkui-navigation
+// Props handled by vkui-navigation
 type HandledProps = "activePanel" | "history" | "popout" | "onSwipeBack";
 
 interface NavigatorViewProps extends Omit<ViewProps, HandledProps> {
