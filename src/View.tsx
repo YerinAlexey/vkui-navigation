@@ -96,11 +96,11 @@ const NavigatorView: React.FC<NavigatorViewProps> = ({
       }}
     >
       <View
+        {...rest}
         activePanel={lastPanel.id}
         history={history.map((entry) => entry.id)}
         popout={popout}
         onSwipeBack={popHistory}
-        {...rest}
       >
         {children}
       </View>

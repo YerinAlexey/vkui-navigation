@@ -40,7 +40,7 @@ const NavigatorRoot: React.FC<NavigatorRootProps> = ({
         viewParams,
       }}
     >
-      <Root activeView={activeView} {...rest}>
+      <Root {...rest} activeView={activeView}>
         {children}
       </Root>
     </RootContext.Provider>

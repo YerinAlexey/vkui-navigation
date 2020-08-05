@@ -42,12 +42,12 @@ const buildTabbar = (
     <Tabbar>
       {tabbar.map(({ icon, story, ...rest }, index) => (
         <TabbarItem
+          {...rest}
           key={index}
           selected={selectedStory === story}
           onClick={() => {
             onChange(story);
           }}
-          {...rest}
         >
           {icon}
         </TabbarItem>
