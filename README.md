@@ -197,7 +197,7 @@ function App() {
   );
 }
 ```
-_Note:_ `story` in `tabbar` should match corresponding `View`'s (or `Root`'s) ID
+**Note:** `story` in `tabbar` should match corresponding `View`'s (or `Root`'s) ID
 
 Defining a tab bar can be confusing because in VKUI you need to use `Tabbar`
 and `TabbarItem` components to build it. With `vkui-navigation` you can write
