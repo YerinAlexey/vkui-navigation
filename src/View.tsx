@@ -53,13 +53,6 @@ const NavigatorView: React.FC<NavigatorViewProps> = ({
 
   // Go to the previous panel
   const popHistory = () => {
-    // If popout is open, do not allow going back
-    if (popout) {
-      window.history.pushState(lastPanel, "");
-
-      return;
-    }
-
     // Update history
     setHistory((hist) =>
       hist.length > 1 ? hist.slice(0, hist.length - 1) : hist
