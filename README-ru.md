@@ -156,7 +156,6 @@ function OnboardingView({ id }) {
 Для создания нижнего Таббара, Вам нужно обернуть несколько `View`/`Root` в `Epic` и описать вкладки:
 ```js
 import React from "react";
-import { View } from "@vkontakte/vkui";
 import { View, Epic /* ... */ } from "vkui-navigation";
 import Icon28Newsfeed from "@vkontakte/icons/dist/28/newsfeed";
 import Icon28ServicesOutline from "@vkontakte/icons/dist/28/services_outline";

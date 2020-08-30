@@ -155,7 +155,6 @@ function OnboardingView({ id }) {
 To create bottom navigation bar you can wrap your `View`s or `Root`s in `Epic` and define your tab bar:
 ```js
 import React from "react";
-import { View } from "@vkontakte/vkui";
 import { View, Epic /* ... */ } from "vkui-navigation";
 import Icon28Newsfeed from "@vkontakte/icons/dist/28/newsfeed";
 import Icon28ServicesOutline from "@vkontakte/icons/dist/28/services_outline";
