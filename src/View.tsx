@@ -49,6 +49,9 @@ const NavigatorView: React.FC<NavigatorViewProps> = ({
 
     // Add panel to browser history
     window.history.pushState(entry, "");
+
+    // Reset popout
+    setPopout(null);
   };
 
   // Go to the previous panel
@@ -62,6 +65,9 @@ const NavigatorView: React.FC<NavigatorViewProps> = ({
     if (history[history.length - 1].id === homePanel) {
       bridge.send("VKWebAppDisableSwipeBack");
     }
+
+    // Reset popout
+    setPopout(null);
   };
 
   // Set popouts
