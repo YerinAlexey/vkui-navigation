@@ -6,6 +6,8 @@ interface EpicProps {
   /**
    * `id` property if you want to use Epic in Root
   */
+  id?: string;
+  
   /**
    * Default story (`View` or `Root`'s ID)
    */
