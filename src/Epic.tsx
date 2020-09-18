@@ -4,6 +4,9 @@ import { TabbarItemProps } from "@vkontakte/vkui/dist/components/TabbarItem/Tabb
 
 interface EpicProps {
   /**
+   * `id` property if you want to use Epic in Root
+  */
+  /**
    * Default story (`View` or `Root`'s ID)
    */
   homeStory: string;
