@@ -1,8 +1,9 @@
 import React, { useState, ReactNode, useMemo } from "react";
 import { Epic, Tabbar, TabbarItem } from "@vkontakte/vkui";
+import { EpicProps } from "@vkontakte/vkui/dist/components/Epic/Epic";
 import { TabbarItemProps } from "@vkontakte/vkui/dist/components/TabbarItem/TabbarItem";
 
-interface EpicProps {
+interface NavigatorEpicProps extends Omit<EpicProps, "activeStory" | "tabbar"> {
   /**
    * Default story (`View` or `Root`'s ID)
    */
@@ -66,10 +67,11 @@ const buildTabbar = (
 /**
  * Wrapper around `Epic`
  */
-const NavigatorEpic: React.FC<EpicProps> = ({
+const NavigatorEpic: React.FC<NavigatorEpicProps> = ({
   homeStory,
   tabbar,
   children,
+  ...rest
 }) => {
   const [story, setStory] = useState(homeStory);
 
@@ -80,7 +82,7 @@ const NavigatorEpic: React.FC<EpicProps> = ({
   ]);
 
   return (
-    <Epic activeStory={story} tabbar={builtTabbar}>
+    <Epic {...rest} activeStory={story} tabbar={builtTabbar}>
       {children}
     </Epic>
   );
