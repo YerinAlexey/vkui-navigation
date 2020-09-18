@@ -4,11 +4,11 @@
 [![NPM version](https://img.shields.io/npm/v/vkui-navigation)](https://npmjs.com/package/vkui-navigation)
 [![License](https://img.shields.io/github/license/YerinAlexey/vkui-navigation)](LICENSE)
 
+[EN](./README.md) | **[RU](./README-ru.md)**
+
 Современный роутер для VK Mini Apps.
 
 Эта библиотека упрощает навигацию в приложениях на основе VKUI. Структура приложения остаётся той же ([`Epic`] -> [`Root`] -> `View` -> `Panel`) и даже компоненты называются так же, как и в VKUI. Это значит, Вам будет куда проще разобраться в `vkui-navigation` если Вы уже знакомы с VKUI.
-
-Переводы: [EN](./README.md) | **[RU](./README-ru.md)**
 
 # Установка
 С помощью [Yarn](https://yarnpkg.com):

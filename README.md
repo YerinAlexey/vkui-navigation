@@ -4,11 +4,11 @@
 [![NPM version](https://img.shields.io/npm/v/vkui-navigation)](https://npmjs.com/package/vkui-navigation)
 [![License](https://img.shields.io/github/license/YerinAlexey/vkui-navigation)](LICENSE)
 
+**[EN](./README.md)** | [RU](./README-ru.md)
+
 Modern router for VK Mini Apps.
 
 This library simplifies navigation with VKUI and provides API to control it. Application structure is kept the same ([`Epic`] -> [`Root`] -> `View` -> `Panel`) and even components are named as in VKUI so it will be much easier to get started if you already know how VKUI works.
-
-Translations: **[EN](./README.md)** | [RU](./README-ru.md)
 
 # Installation
 With [Yarn](https://yarnpkg.com):
