@@ -72,6 +72,7 @@ const buildTabbar = (
  * Wrapper around `Epic`
  */
 const NavigatorEpic: React.FC<EpicProps> = ({
+  id,
   homeStory,
   tabbar,
   children,
@@ -85,7 +86,7 @@ const NavigatorEpic: React.FC<EpicProps> = ({
   ]);
 
   return (
-    <Epic activeStory={story} tabbar={builtTabbar}>
+    <Epic id={id} activeStory={story} tabbar={builtTabbar}>
       {children}
     </Epic>
   );
