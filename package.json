@@ -19,7 +19,8 @@
   "scripts": {
     "prepack": "rollup -c",
     "build": "rollup -c",
-    "watch": "rollup -cw"
+    "watch": "rollup -cw",
+    "lint": "eslint --ext ts,tsx src/"
   },
   "peerDependencies": {
     "@vkontakte/vk-bridge": "*",
@@ -28,12 +29,16 @@
   },
   "devDependencies": {
     "@types/react": "^16.9.44",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
     "@vkontakte/vk-bridge": "^2.2.5",
     "@vkontakte/vkui": "^3.12.0",
+    "eslint": "^7.9.0",
+    "eslint-plugin-react-hooks": "^4.1.2",
     "rollup": "^2.23.0",
     "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-typescript2": "^0.27.1",
     "tslib": "^2.0.0",
-    "typescript": "^3.9.7"
+    "typescript": "^4.0.3"
   }
 }

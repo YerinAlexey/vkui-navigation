@@ -89,7 +89,9 @@ const NavigatorView: React.FC<NavigatorViewProps> = ({
       // Remove event handler
       window.removeEventListener("popstate", popHistory);
     };
-  }, []);
+  }, []); // eslint-disable-line
+
+  // The code above is intentional
 
   return (
     <ViewContext.Provider

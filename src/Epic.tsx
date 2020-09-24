@@ -77,6 +77,7 @@ const NavigatorEpic: React.FC<NavigatorEpicProps> = ({
 
   // Build tabbar
   const builtTabbar = useMemo(() => buildTabbar(tabbar, story, setStory), [
+    tabbar,
     story,
     setStory,
   ]);
