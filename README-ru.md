@@ -3,7 +3,7 @@
 # vkui-navigation
 [![NPM version](https://img.shields.io/npm/v/vkui-navigation)](https://npmjs.com/package/vkui-navigation)
 [![License](https://img.shields.io/github/license/YerinAlexey/vkui-navigation)](LICENSE)
-![Lint status](https://img.shields.io/github/workflow/status/YerinAlexey/vkui-navigation/lint?label=Lint)
+![Lint](https://github.com/YerinAlexey/vkui-navigation/workflows/Lint/badge.svg)
 
 [EN](./README.md) | **[RU](./README-ru.md)**
 
