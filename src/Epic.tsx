@@ -74,6 +74,7 @@ const NavigatorEpic: React.FC<NavigatorEpicProps> = ({
   children,
   ...rest
 }) => {
+  const [tabbarVisibility, setTabbarVisibility] = useState(true);
   const [story, setStory] = useState(homeStory);
 
   // Build tabbar
@@ -84,8 +85,14 @@ const NavigatorEpic: React.FC<NavigatorEpicProps> = ({
   ]);
 
   return (
-    <Epic {...rest} activeStory={story} tabbar={builtTabbar}>
-      <EpicContext.Provider value={{ changeStory: setStory }}>
+    <Epic
+      {...rest}
+      activeStory={story}
+      tabbar={tabbarVisibility ? builtTabbar : null}
+    >
+      <EpicContext.Provider
+        value={{ changeStory: setStory, setTabbarVisibility }}
+      >
         {children}
       </EpicContext.Provider>
     </Epic>

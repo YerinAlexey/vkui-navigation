@@ -21,6 +21,13 @@ export interface EpicState {
    * @param storyId Story ID to go to
    */
   changeStory: (storyId: string) => void;
+
+  /**
+   * Change `Tabbar` visibility
+   *
+   * @param visible Hide or show the `Tabbar`
+   */
+  setTabbarVisibility: (visible: boolean) => void;
 }
 
 // Navigation between Views
