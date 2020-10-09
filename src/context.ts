@@ -3,6 +3,7 @@ import { createContext } from "react";
 
 export const EpicContext = createContext<EpicState>({
   changeStory: () => {},
+  setTabbarVisibility: () => {},
 });
 
 export const RootContext = createContext<RootState>({
