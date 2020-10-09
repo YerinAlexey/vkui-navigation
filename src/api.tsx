@@ -1,16 +1,18 @@
 import React, { useContext, useMemo } from "react";
-import { RootContext, ViewContext } from "./context";
+import { EpicContext, RootContext, ViewContext } from "./context";
 import { Navigator } from "./types";
 
 /**
  * Hook to access `Navigator` object from a functional component
  */
 export function useNavigator(): Navigator {
+  const epicState = useContext(EpicContext);
   const rootState = useContext(RootContext);
   const viewState = useContext(ViewContext);
 
   const navigator = useMemo(
     () => ({
+      ...epicState,
       ...rootState,
       ...viewState,
     }),

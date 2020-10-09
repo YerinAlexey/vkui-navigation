@@ -1,5 +1,9 @@
-import { RootState, ViewState } from "./types";
+import { EpicState, RootState, ViewState } from "./types";
 import { createContext } from "react";
+
+export const EpicContext = createContext<EpicState>({
+  changeStory: () => {},
+});
 
 export const RootContext = createContext<RootState>({
   changeView: () => {},

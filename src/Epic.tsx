@@ -2,6 +2,7 @@ import React, { useState, ReactNode, useMemo } from "react";
 import { Epic, Tabbar, TabbarItem } from "@vkontakte/vkui";
 import { EpicProps } from "@vkontakte/vkui/dist/components/Epic/Epic";
 import { TabbarItemProps } from "@vkontakte/vkui/dist/components/TabbarItem/TabbarItem";
+import { EpicContext } from "./context";
 
 interface NavigatorEpicProps extends Omit<EpicProps, "activeStory" | "tabbar"> {
   /**
@@ -84,7 +85,9 @@ const NavigatorEpic: React.FC<NavigatorEpicProps> = ({
 
   return (
     <Epic {...rest} activeStory={story} tabbar={builtTabbar}>
-      {children}
+      <EpicContext.Provider value={{ changeStory: setStory }}>
+        {children}
+      </EpicContext.Provider>
     </Epic>
   );
 };

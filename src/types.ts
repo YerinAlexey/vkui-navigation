@@ -13,6 +13,16 @@ export interface HistoryEntry {
   params: any;
 }
 
+// Navigation inside Epic
+export interface EpicState {
+  /**
+   * Change `Epic`'s story
+   *
+   * @param storyId Story ID to go to
+   */
+  changeStory: (storyId: string) => void;
+}
+
 // Navigation between Views
 export interface RootState {
   /**
