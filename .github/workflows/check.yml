@@ -1,10 +1,10 @@
-name: Lint
+name: Check
 
 on: [push, pull_request]
 
 jobs:
   lint:
-    name: Lint the codebase
+    name: Lint and build the project
     runs-on: ubuntu-latest
 
     steps:
