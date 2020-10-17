@@ -1,7 +1,7 @@
 import React, { useContext, useMemo } from "react";
-import { RootContext, ViewContext } from "./context";
 import { EpicContext, EpicState } from "./Epic/types";
-import { RootState, ViewState } from "./types";
+import { RootContext, RootState } from "./Root/types";
+import { ViewContext, ViewState } from "./View/types";
 
 export type Navigator = EpicState & RootState & ViewState;
 
