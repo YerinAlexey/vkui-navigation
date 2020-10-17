@@ -1,10 +1,7 @@
 // Components
-export { NavigatorRoot as Root } from "./Root";
-export { NavigatorView as View } from "./View";
-export { NavigatorEpic as Epic } from "./Epic";
+export { NavigatorRoot as Root } from "./Root/Root";
+export { NavigatorView as View } from "./View/View";
+export { NavigatorEpic as Epic } from "./Epic/Epic";
 
-// Hook and HOC
-export * from "./api";
-
-// Types
-export { Navigator } from "./types";
+// Public API
+export * from "./navigator";

@@ -1,9 +1,9 @@
 import React, { useState, useMemo, ReactNode, useEffect } from "react";
 import bridge from "@vkontakte/vk-bridge";
 import { View } from "@vkontakte/vkui";
-import { ViewContext } from "./context";
-import { HistoryEntry } from "./types";
 import { ViewProps } from "@vkontakte/vkui/dist/components/View/View";
+
+import { ViewContext, HistoryEntry } from "./types";
 
 // Props handled by vkui-navigation
 type HandledProps = "activePanel" | "history" | "popout" | "onSwipeBack";

@@ -1,6 +1,9 @@
 import React, { useContext, useMemo } from "react";
-import { EpicContext, RootContext, ViewContext } from "./context";
-import { Navigator } from "./types";
+import { RootContext, ViewContext } from "./context";
+import { EpicContext, EpicState } from "./Epic/types";
+import { RootState, ViewState } from "./types";
+
+export type Navigator = EpicState & RootState & ViewState;
 
 /**
  * Hook to access `Navigator` object from a functional component

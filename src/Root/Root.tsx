@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import bridge from "@vkontakte/vk-bridge";
 import { Root } from "@vkontakte/vkui";
-import { RootContext } from "./context";
 import { RootProps } from "@vkontakte/vkui/dist/components/Root/Root";
+
+import { RootContext } from "./types";
 
 // Props handled by vkui-navigation
 type HandledProps = "activeView";
