@@ -64,3 +64,5 @@ return (
 | `homeView` | **Required.** Default View ID |
 
 All the properties from original `Root` are accepted except `activeView`.
+
+[Navigation →](./navigation.en.md)

@@ -64,3 +64,5 @@ return (
 | `homeView` | **Обязательно.** ID начального `View` |
 
 Всё свойства `Root` принимаются за исключением `activeView`.
+
+[Навигация →](./navigation.ru.md)
