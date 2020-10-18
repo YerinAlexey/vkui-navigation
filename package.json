@@ -17,7 +17,7 @@
   "author": "Alexey Yerin",
   "license": "MIT",
   "scripts": {
-    "prepack": "rollup -c",
+    "prepack": "run-s check build",
     "build": "rollup -c",
     "watch": "rollup -cw",
     "check:lint": "eslint --ext ts,tsx src/",
