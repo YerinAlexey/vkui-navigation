@@ -24,10 +24,7 @@ const NavigatorView: React.FC<NavigatorViewProps> = ({
   ...rest
 }) => {
   const [popout, setPopout] = useState<ReactNode>(null);
-  const { pushState, popState, history } = useHistory(homePanel);
-
-  // Get last panel from history
-  const lastPanel = useMemo(() => history[history.length - 1], [history]);
+  const { pushState, popState, history, lastPanel } = useHistory(homePanel);
 
   // Go to another panel
   const go = (id: string, params?: any) => {

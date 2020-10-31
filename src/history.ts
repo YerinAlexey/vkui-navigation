@@ -1,9 +1,8 @@
 /**
- * History management
- */
+ * History management */
 
 import bridge from "@vkontakte/vk-bridge";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 // History entry for View
 export interface HistoryEntry {
@@ -21,7 +20,10 @@ export interface HistoryEntry {
 interface UseHistoryState {
   pushState: (entry: HistoryEntry) => void;
   popState: () => void;
+
   history: HistoryEntry[];
+
+  lastPanel: HistoryEntry;
 }
 
 export const useHistory = (homePanel: string): UseHistoryState => {
@@ -31,6 +33,9 @@ export const useHistory = (homePanel: string): UseHistoryState => {
       params: {},
     },
   ]);
+
+  // Get last panel from history
+  const lastPanel = useMemo(() => history[history.length - 1], [history]);
 
   const pushState = (entry: HistoryEntry) => {
     // Save entry in the internal state
@@ -56,5 +61,5 @@ export const useHistory = (homePanel: string): UseHistoryState => {
     }
   };
 
-  return { pushState, popState, history };
+  return { pushState, popState, history, lastPanel };
 };
