@@ -31,19 +31,6 @@ export interface ViewState {
   hidePopout(): void;
 }
 
-// History entry for View
-export interface HistoryEntry {
-  /**
-   * `Panel`'s `id`
-   */
-  id: string;
-
-  /**
-   * Params
-   */
-  params: any;
-}
-
 export const ViewContext = createContext<ViewState>({
   go: () => {},
   goBack: () => {},

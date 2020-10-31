@@ -1,9 +1,9 @@
 import React, { useState, useMemo, ReactNode, useEffect } from "react";
-import bridge from "@vkontakte/vk-bridge";
 import { View } from "@vkontakte/vkui";
 import { ViewProps } from "@vkontakte/vkui/dist/components/View/View";
 
-import { ViewContext, HistoryEntry } from "./types";
+import { useHistory } from "../history";
+import { ViewContext } from "./types";
 
 // Props handled by vkui-navigation
 type HandledProps = "activePanel" | "history" | "popout" | "onSwipeBack";
@@ -23,32 +23,19 @@ const NavigatorView: React.FC<NavigatorViewProps> = ({
   children,
   ...rest
 }) => {
-  const [history, setHistory] = useState<HistoryEntry[]>([
-    {
-      id: homePanel,
-      params: {},
-    },
-  ]);
   const [popout, setPopout] = useState<ReactNode>(null);
+  const { pushState, popState, history } = useHistory(homePanel);
 
   // Get last panel from history
   const lastPanel = useMemo(() => history[history.length - 1], [history]);
 
   // Go to another panel
   const go = (id: string, params?: any) => {
-    const entry = {
+    // Add panel to browser history
+    pushState({
       id,
       params: params || {},
-    };
-
-    // Push
-    setHistory((hist) => [...hist, entry]);
-
-    // Enable Swipe Back
-    bridge.send("VKWebAppEnableSwipeBack");
-
-    // Add panel to browser history
-    window.history.pushState(entry, "");
+    });
 
     // Reset popout
     setPopout(null);
@@ -56,15 +43,7 @@ const NavigatorView: React.FC<NavigatorViewProps> = ({
 
   // Go to the previous panel
   const popHistory = () => {
-    // Update history
-    setHistory((hist) =>
-      hist.length > 1 ? hist.slice(0, hist.length - 1) : hist
-    );
-
-    // If on home panel, disable swipe back
-    if (history[history.length - 1].id === homePanel) {
-      bridge.send("VKWebAppDisableSwipeBack");
-    }
+    popState();
 
     // Reset popout
     setPopout(null);
