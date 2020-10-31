@@ -1,4 +1,4 @@
-import React, { useState, useMemo, ReactNode, useEffect } from "react";
+import React, { useState, ReactNode, useEffect } from "react";
 import { View } from "@vkontakte/vkui";
 import { ViewProps } from "@vkontakte/vkui/dist/components/View/View";
 
